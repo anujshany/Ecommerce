@@ -1,34 +1,38 @@
-import React from 'react'
-import { Card } from 'react-bootstrap'
-import Rating from './Rating'
+import React from "react";
+import { Card } from "react-bootstrap";
+import Rating from "./Rating";
+import { Link } from "react-router-dom";
 
-function Product({product}) {
-    return (
-        <Card className="my-3 p-3 rounded">
-            <a href={`/products/${product._id}`}>
-                <Card.Img src={product.image}/>
-            </a>
+function Product({ product }) {
+  return (
+    <Card className="my-3 p-3 rounded">
+      <Link to={`/products/${product._id}`}>
+        <Card.Img src={product.image} />{" "}
+      </Link>
 
-        <Card.Body>
-            <a href={`/products/${product._id}`}>
-                <Card.Title as="div">
-                    <strong>{product.name}</strong>
-                </Card.Title>
-            </a>
+      <Card.Body>
+        <Link to={`/products/${product._id}`}>
+          <Card.Title as="div">
+            <strong> {product.name} </strong>{" "}
+          </Card.Title>{" "}
+        </Link>
 
-            <Card.Text as="div">
-                <div className="my-3">
-                    <Rating value={product.rating} text={`${product.numReviews} reviews`} color={"#dbd21d"}/>
-                </div>
-            </Card.Text>
+        <Card.Text as="div">
+          <div className="my-3">
+            <Rating
+              value={product.rating}
+              text={`${product.numReviews} reviews`}
+              color={"#dbd21d"}
+            />{" "}
+          </div>{" "}
+        </Card.Text>
 
-            <Card.Text as="h3">
-            <p>&#8377;{product.price}</p>
-            </Card.Text>
-        </Card.Body>
-
-        </Card>
-    )
+        <Card.Text as="h3">
+          <p> &#8377;{product.price}</p>
+        </Card.Text>
+      </Card.Body>
+    </Card>
+  );
 }
 
-export default Product
+export default Product;

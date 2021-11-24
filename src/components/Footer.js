@@ -6,9 +6,9 @@ function footer() {
     <footer>
       <Container>
         <Row>
-          <Col className="text-center py-3"> Copyright & copy; EcoShop </Col>
-        </Row>
-      </Container>
+          <Col className="text-center py-3"> Copyright & copy; EcoShop </Col>{" "}
+        </Row>{" "}
+      </Container>{" "}
     </footer>
   );
 }
